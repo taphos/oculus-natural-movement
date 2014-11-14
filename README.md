@@ -1,4 +1,4 @@
-oculus-natural-movement
+Oculus Natural Movement
 =======================
 
 This is an implementation of character controller which allows player to move naturally in order to control the virtual character.
