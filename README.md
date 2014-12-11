@@ -15,7 +15,7 @@ Controls
  * Slow movements can be achieved by making small steps inside the in game marked tracker range.
  * Faster movements achieved by jogging in place. Steps are detected using head movements so it is better to jog hopping. It takes a bit to of practice to figure out the comfortable jogging style.
 
- Check the example video https://www.youtube.com/watch?v=LALSXmYQxe0
+ Check the example game video called EvilMech Runner https://www.youtube.com/watch?v=LALSXmYQxe0
 
 Author
 ======
