@@ -30,7 +30,7 @@ public class OVRNaturalMovementController : MonoBehaviour
 
 	float velocity;
 
-	void LateUpdate()
+	void Update()
 	{
 		UpdateNaturalMovement(); 
 		UpdateKeyboardMovement();
@@ -61,7 +61,7 @@ public class OVRNaturalMovementController : MonoBehaviour
 		
 		var yChange = rig.centerEyeAnchor.localPosition.y - lastPosition.y;
 		
-		var desiredVelocity = (Mathf.Abs(yChange) - rotCompensation) * 5 / Time.deltaTime;	
+		var desiredVelocity = Time.deltaTime > 0 ? (Mathf.Abs(yChange) - rotCompensation) * 5 / Time.deltaTime : 0;	
 		velocity = Mathf.Lerp(velocity, desiredVelocity, Time.deltaTime * 5);
 		
 		var lookDirection = rig.centerEyeAnchor.localRotation * Vector3.forward;
@@ -76,11 +76,11 @@ public class OVRNaturalMovementController : MonoBehaviour
 
 	void UpdateCollider()
 	{
-		var cc = ((CapsuleCollider)collider);
+		var cc = ((CapsuleCollider)GetComponent<Collider>());
 		var center = cc.center;
 
 		// if no obstacles on the way move collider together with camera
-		if (Mathf.Abs(rigidbody.velocity.x) < 0.001f && Mathf.Abs(rigidbody.velocity.z) < 0.001f)
+		if (Mathf.Abs(GetComponent<Rigidbody>().velocity.x) < 0.001f && Mathf.Abs(GetComponent<Rigidbody>().velocity.z) < 0.001f)
 			center = rig.centerEyeAnchor.localPosition;
 
         var height = rig.centerEyeAnchor.localPosition.y + playerEyeHeight;
