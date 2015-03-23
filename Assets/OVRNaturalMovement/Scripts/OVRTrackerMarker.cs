@@ -48,7 +48,7 @@ public class OVRTrackerMarker : MonoBehaviour
     
     void OnRenderObject()
     {    
-        if (Camera.current == rig.camera) return;
+        if (Camera.current == rig.GetComponent<Camera>()) return;
 
         lineMaterial.SetPass(0);
         

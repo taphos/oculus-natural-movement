@@ -219,13 +219,8 @@ public class OVRMainMenu : MonoBehaviour
 	        r.localEulerAngles = Vector3.zero;
 
 			Canvas c = NewGUIObject.AddComponent<Canvas>();
-#if (UNITY_5_0)
-			// TODO: Unity 5.0b11 has an older version of the new GUI being developed in Unity 4.6.
-			// Remove this once Unity 5 has a more recent merge of Unity 4.6.
-	        c.renderMode = RenderMode.World;
-#else
 	        c.renderMode = RenderMode.WorldSpace;
-#endif
+
 	        c.pixelPerfect = false;
 #endif
     }
@@ -938,13 +933,7 @@ public class OVRMainMenu : MonoBehaviour
         r.localEulerAngles = Vector3.zero;
         r.localScale = new Vector3(0.001f, 0.001f, 0.001f);
         Canvas c = RiftPresentGUIObject.AddComponent<Canvas>();
-#if UNITY_5_0
-		// TODO: Unity 5.0b11 has an older version of the new GUI being developed in Unity 4.6.
-	   	// Remove this once Unity 5 has a more recent merge of Unity 4.6.
-		c.renderMode = RenderMode.World;
-#else
 		c.renderMode = RenderMode.WorldSpace;
-#endif
         c.pixelPerfect = false;
         OVRUGUI.RiftPresentGUI(RiftPresentGUIObject);
 #endif
