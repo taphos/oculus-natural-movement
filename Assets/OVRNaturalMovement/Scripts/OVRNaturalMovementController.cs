@@ -11,20 +11,10 @@ public class OVRNaturalMovementController : MonoBehaviour
 	void Start()
 	{
         rig = GetComponentInChildren<OVRCameraRig>();
-
-        float[] a = new float[] {Ovr.Hmd.OVR_DEFAULT_NECK_TO_EYE_VERTICAL, Ovr.Hmd.OVR_DEFAULT_NECK_TO_EYE_HORIZONTAL};
-        a = OVRManager.capiHmd.GetFloatArray(Ovr.Hmd.OVR_KEY_NECK_TO_EYE_DISTANCE, a);
-        neckToEye = new Vector3(0, a[0], a[1]);
-
-        playerEyeHeight = GetPlayerEyeHeight();
-        rig.transform.localPosition = Vector3.up * playerEyeHeight;
+		neckToEye = new Vector3(0, OVRManager.profile.eyeHeight - OVRManager.profile.neckHeight, OVRManager.profile.eyeDepth);
+		rig.transform.localPosition = Vector3.up * OVRManager.profile.eyeHeight;
 	}
-
-	public static float GetPlayerEyeHeight()
-	{
-		return OVRManager.capiHmd.GetFloat(Ovr.Hmd.OVR_KEY_PLAYER_HEIGHT, Ovr.Hmd.OVR_DEFAULT_PLAYER_HEIGHT);
-	}
-
+	
 	Vector3 neckToEye;
 	float playerEyeHeight;
 
