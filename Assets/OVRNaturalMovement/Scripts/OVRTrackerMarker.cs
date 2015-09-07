@@ -3,12 +3,10 @@
 public class OVRTrackerMarker : MonoBehaviour
 {
     [SerializeField] Material lineMaterial;
-	float playerEyeHeight;
 
 	void Start () {
         ResetOrientation();
 		Invoke("ResetOrientation", 5f);
-		playerEyeHeight = OVRManager.profile.eyeHeight;
 	}
 	
 	void Update () {

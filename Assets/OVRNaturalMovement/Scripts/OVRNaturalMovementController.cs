@@ -16,7 +16,6 @@ public class OVRNaturalMovementController : MonoBehaviour
 	}
 	
 	Vector3 neckToEye;
-	float playerEyeHeight;
 
 	float velocity;
 
@@ -73,7 +72,7 @@ public class OVRNaturalMovementController : MonoBehaviour
 		if (Mathf.Abs(GetComponent<Rigidbody>().velocity.x) < 0.001f && Mathf.Abs(GetComponent<Rigidbody>().velocity.z) < 0.001f)
 			center = rig.centerEyeAnchor.localPosition;
 
-        var height = rig.centerEyeAnchor.localPosition.y + playerEyeHeight;
+		var height = rig.centerEyeAnchor.localPosition.y + OVRManager.profile.eyeHeight;
 		center.y = height / 2;
 		cc.center = Vector3.Lerp(cc.center, center, Time.deltaTime);
 		cc.height = cc.center.y * 2;
