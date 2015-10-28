@@ -4,7 +4,7 @@ Oculus Natural Movement
 This is an implementation of character controller which allows player to move naturally in order to control the virtual character.
 Made for Oculus Rift DK2, no additional hardware or sensors reuired. Steps are detected by the head movement captured by DK2 motion tracker camera.
 
-Based on Oculus SDK version 0.7.0.0 and Oculus Unity Utilities 0.1.0
+Based on Oculus SDK version 0.8 and Oculus Unity Utilities 0.1.2
 
 Controls
 ========
