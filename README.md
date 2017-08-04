@@ -1,4 +1,4 @@
-NB! Project is no longer maintained. This repository is replaces with https://github.com/taphos/vr-natural-movement
+NB! Project is no longer maintained. This repository is replaced with https://github.com/taphos/vr-natural-movement
 
 
 Oculus Natural Movement
